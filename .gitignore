@@ -66,3 +66,7 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+
+# MNIST raw data (downloaded by train.py)
+data/
+__pycache__/

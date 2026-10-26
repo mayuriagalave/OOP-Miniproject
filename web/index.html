@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Handwritten Digit Recognition</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Handwritten Digit Recognition</h1>
+      <p class="subtitle">Draw a digit (0&ndash;9) below &mdash; a neural network recognises it as you draw.</p>
+    </header>
+
+    <div class="grid">
+      <!-- Drawing area -->
+      <section class="card">
+        <div class="card-title">Your drawing</div>
+        <canvas id="pad" width="280" height="280" aria-label="Drawing canvas"></canvas>
+        <div class="controls">
+          <button id="clear" type="button">Clear</button>
+          <span id="hint" class="hint">Use your mouse or finger.</span>
+        </div>
+      </section>
+
+      <!-- Result area -->
+      <section class="card">
+        <div class="card-title">Prediction</div>
+        <div id="result" class="result">
+          <div class="big-dash">&ndash;</div>
+          <div class="status">Loading model&hellip;</div>
+        </div>
+        <div id="status" class="status model-status">Loading model&hellip;</div>
+        <div id="bars" class="bars" hidden></div>
+        <div class="footnote" id="footnote" hidden></div>
+      </section>
+    </div>
+
+    <footer>
+      <p>Model: fully connected network 784&rarr;128&rarr;64&rarr;10, trained on MNIST with
+        <code>train.py</code>. Inference runs entirely in your browser.</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
